@@ -1,13 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import HamburgerMenuBtn from "./hamburger-menu-btn";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const menuItems = [
     { name: "HOME", href: "/" },
@@ -18,7 +29,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+        scrolled ? "bg-white shadow" : "backdrop-blur-md"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -38,7 +53,11 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary font-medium text-sm tracking-wide transition-colors duration-200"
+                className={`font-medium text-sm tracking-wide transition-colors duration-200 ${
+                  scrolled
+                    ? "text-gray-800 hover:text-primary"
+                    : "text-white hover:text-primary"
+                }`}
               >
                 {item.name}
               </Link>
@@ -55,45 +74,46 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
+            <HamburgerMenuBtn
+              active={isOpen}
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700"
-            >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
+            />
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100">
-          <div className="px-4 py-6 space-y-4">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block text-gray-700 hover:text-blue-600 font-medium text-sm tracking-wide transition-colors duration-200"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed w-full z-40 flex flex-col bg-white lg:hidden"
+          >
+            <div className="flex-1 px-6 py-8 space-y-4">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-gray-800 hover:text-primary font-semibold text-lg transition-colors duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <Button
+                className="w-full bg-primary hover:bg-primary/90 text-white py-6 rounded-full font-semibold mt-6"
                 onClick={() => setIsOpen(false)}
               >
-                {item.name}
-              </Link>
-            ))}
-            <div className="pt-4">
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-full font-medium">
                 GET A QUOTE
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

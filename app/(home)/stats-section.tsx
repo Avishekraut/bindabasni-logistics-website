@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { SlidingNumber } from "@/components/ui/sliding-number";
+import { useInView } from "@/lib/useInView";
 
 interface StatItemProps {
   targetValue: number;
   suffix?: string;
   label: string;
   duration?: number;
+  start?: boolean; // Added start prop
 }
 
 function StatItem({
@@ -15,10 +17,15 @@ function StatItem({
   suffix = "",
   label,
   duration = 2000,
+  start = false, // Default to false
 }: StatItemProps) {
   const [currentValue, setCurrentValue] = useState(0);
 
   useEffect(() => {
+    if (!start) {
+      setCurrentValue(0);
+      return;
+    }
     const startTime = Date.now();
     const startValue = 0;
 
@@ -45,7 +52,7 @@ function StatItem({
     }, 500);
 
     return () => clearTimeout(timer);
-  }, [targetValue, duration]);
+  }, [targetValue, duration, start]);
 
   return (
     <div className="text-center">
@@ -61,32 +68,38 @@ function StatItem({
 }
 
 export function StatsSection() {
+  const [ref, inView] = useInView<HTMLDivElement>({ threshold: 0.3 });
+
   return (
-    <div className="w-full py-8 md:py-12 bg-gray-50">
+    <div ref={ref} className="w-full py-8 md:py-12 bg-gray-50">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 md:px-16">
         <StatItem
-          targetValue={10}
+          targetValue={9}
           suffix="K+"
           label="Deliveries Managed"
           duration={2500}
+          start={inView}
         />
         <StatItem
           targetValue={50}
           suffix="+"
           label="Active Clients"
-          duration={2200}
+          duration={2500}
+          start={inView}
         />
         <StatItem
           targetValue={98}
           suffix="%"
           label="On-Time Delivery Rate"
-          duration={1800}
+          duration={2500}
+          start={inView}
         />
         <StatItem
           targetValue={40}
           suffix="+"
           label="Industry Awards"
-          duration={2000}
+          duration={2500}
+          start={inView}
         />
       </div>
     </div>

@@ -49,7 +49,8 @@ export default function AboutSection() {
                 About Us
               </span>
               <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight md:mt-2">
-                Have a Wide Range of Smart Solutions for Business
+                Have a Wide Range of Smart
+                <p className="text-primary">Solutions for Business</p>
               </h2>
             </div>
 
@@ -73,8 +74,8 @@ export default function AboutSection() {
               {highlights.map((item, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                      <item.icon className="w-5 h-5 text-blue-600" />
+                    <div className="w-10 h-10 bg-yellow-50 rounded-full flex items-center justify-center">
+                      <item.icon className="w-5 h-5 text-yellow-600" />
                     </div>
                   </div>
                   <span className="text-gray-700 font-medium text-sm">

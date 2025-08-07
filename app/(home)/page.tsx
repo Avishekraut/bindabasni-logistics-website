@@ -4,7 +4,7 @@ import ServicesSection from "./services-section";
 import TerminalSection from "./terminal-section";
 import { StatsSection } from "./stats-section";
 import Testimonials from "./testimonial-section";
-import CtaSection from "./cta-section";
+import CtaSection from "../../components/shared/cta-section";
 import ContactForm from "./contact-form";
 
 export default function Home() {
@@ -16,7 +16,9 @@ export default function Home() {
       <TerminalSection />
       <StatsSection />
       <Testimonials />
-      <CtaSection />
+      <div className="px-4 md:px-38 bg-gray-50">
+        <CtaSection />
+      </div>
       <ContactForm />
     </>
   );

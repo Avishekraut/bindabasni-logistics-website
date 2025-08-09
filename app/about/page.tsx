@@ -46,7 +46,7 @@ const About = () => {
                   <div className="text-sm font-medium uppercase text-gray-500">
                     YEAR FOUNDED
                   </div>
-                  <p className="text-gray-600 text-xs md:text-sm">
+                  <p className="text-gray-600 text-xs md:text-base">
                     With the vision of bringing global procurement experts
                     together
                   </p>
@@ -58,7 +58,7 @@ const About = () => {
                   <div className="text-sm font-medium uppercase text-gray-500">
                     SHIPMENTS MANAGED
                   </div>
-                  <p className="text-gray-600 text-xs md:text-sm ">
+                  <p className="text-gray-600 text-xs md:text-base ">
                     With the vision of bringing global procurement experts
                     together
                   </p>
@@ -70,7 +70,7 @@ const About = () => {
                   <div className="text-sm font-medium uppercase text-gray-500">
                     SATISFACTION
                   </div>
-                  <p className="text-gray-600 text-xs md:text-sm">
+                  <p className="text-gray-600 text-xs md:text-base">
                     With the vision of bringing global procurement experts
                     together
                   </p>
@@ -82,7 +82,7 @@ const About = () => {
                   <div className="text-sm font-medium uppercase text-gray-500">
                     CLIENTS WORLDWIDE
                   </div>
-                  <p className="text-gray-600 text-xs md:text-sm">
+                  <p className="text-gray-600 text-xs md:text-base">
                     With the vision of bringing global procurement experts
                     together
                   </p>

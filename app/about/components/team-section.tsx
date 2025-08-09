@@ -27,9 +27,11 @@ export default function TeamSection() {
   return (
     <section className="py-12 md:py-20">
       <div className="mx-auto px-4 text-center max-w-5xl">
+        <h2 className="text-base font-semibold tracking-wide uppercase text-primary">
+          Our Team
+        </h2>
         <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-          <span className="text-primary">Our Dedicated Team:</span> Your
-          Trusted
+          <span className="">Our Dedicated Team:</span> Your Trusted
           <br className="hidden sm:inline" /> Partners in Logistics
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">

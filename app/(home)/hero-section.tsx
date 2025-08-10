@@ -141,7 +141,10 @@ export default function HeroSection() {
                   priority={i === 0}
                 />
                 {/* Subtle dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
+                <div
+                  className="absolute inset-0 bg-black/20"
+                  aria-hidden="true"
+                />
               </div>
             ))}
           </div>
@@ -149,7 +152,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-32 md:pt-40 md:pb-36">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-32 md:pb-27 md: md:pt-40">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedIndex}
@@ -200,7 +203,7 @@ export default function HeroSection() {
       </div>
 
       {/* Dots Indicator */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-10 md:bottom-16 z-10 flex items-center justify-center">
+      <div className="pointer-events-none absolute inset-x-0 bottom-10 z-10 flex items-center justify-center">
         <div className="pointer-events-auto flex items-center gap-3 rounded-full  px-3 py-2 backdrop-blur-sm">
           {slides.map((_, i) => {
             const isActive = i === selectedIndex;

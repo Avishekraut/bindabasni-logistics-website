@@ -1,15 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, Ship, Globe, Clock, Shield } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Ship, Globe, Clock, Shield } from "lucide-react";
 import { AnimatedButton } from "@/components/shared/animated-button";
+import { useRouter } from "next/navigation";
 
 export default function AboutSection() {
   const highlights = [
     {
       icon: Ship,
-      text: "Global shipping network with 200+ ports worldwide",
+      text: "25 years of expertise in transportation & customs clearance",
     },
     {
       icon: Clock,
@@ -24,6 +24,8 @@ export default function AboutSection() {
       text: "Sustainable logistics solutions",
     },
   ];
+
+  const router = useRouter();
 
   return (
     <section className="py-16 md:py-20 bg-gray-50">
@@ -56,17 +58,23 @@ export default function AboutSection() {
 
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
               <p>
-                With over two decades of experience in global logistics, we
-                provide comprehensive shipping and supply chain solutions that
-                connect businesses worldwide. Our advanced technology and
-                extensive network ensure your cargo reaches its destination
-                safely and on time.
+                Bindabasini Logistics was founded on June 20, 2011, by Mr.
+                Madhav Prasad Baral and is backed by over 25 years of experience
+                in transportation management and customs clearance. From the
+                outset, we have been dedicated to making logistics simpler,
+                faster, and more reliable for businesses of all sizes. With our
+                own fleet of trailers and a dedicated team, we make sure that
+                goods are moved smoothly and on time.
               </p>
               <p>
-                From small packages to oversized cargo, we handle every shipment
-                with precision and care. Our commitment to excellence has made
-                us a trusted partner for thousands of businesses across the
-                globe.
+                Our mission is to bring innovation, reliability, and energy to
+                logistics while helping businesses grow. At Bindabasini
+                Logistics, we combine trusted carrier networks with smart,
+                cost-saving insights so clients can focus on their core
+                business. We believe success is a shared journey built on trust,
+                transparency, and respect. Every delivery is more than reaching
+                a destination; it&apos;s about driving our customers&apos;
+                success forward.
               </p>
             </div>
 
@@ -87,17 +95,10 @@ export default function AboutSection() {
 
             {/* CTA Button */}
             <div className="pt-4">
-              {/* <Button
-                variant="outline"
-                size="lg"
-                className="group border-2 border-gray-300 hover:border-primary text-gray-700 hover:text-primary py-6 px-5 rounded-full font-semibold transition-all duration-200 bg-transparent"
-              >
-                Who We Are
-                <div className="ml-3 w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:bg-primary transition-colors duration-200">
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </div>
-              </Button> */}
-              <AnimatedButton label="Who We Are" />
+              <AnimatedButton
+                label="Who We Are"
+                onClick={() => router.push("/about")}
+              />
             </div>
           </div>
         </div>

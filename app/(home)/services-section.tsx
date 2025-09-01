@@ -17,6 +17,7 @@ import {
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { CarouselApi } from "@/components/ui/carousel";
+import Link from "next/link";
 
 const services = [
   {
@@ -190,7 +191,7 @@ export default function ServicesSection() {
                         </div>
 
                         <button className="flex items-center gap-2 text-gray-700 font-semibold hover:text-primary transition-colors duration-200">
-                          <span>Read More</span>
+                          <Link href="/services">Read More</Link>
                           <ArrowRight className="w-4 h-4" />
                         </button>
                       </div>

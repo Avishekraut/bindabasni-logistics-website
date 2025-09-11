@@ -23,17 +23,50 @@ const About = () => {
                   About Company
                 </h2>
                 <h3 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                  {"Lorem ipsum dolor sit amet, consectetur lorem"}
+                  {"Your Partner in Seamless Logistics"}
                 </h3>
                 <p className="max-w-[600px] text-gray-600 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-                  {
+                  {/* {
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  }
+                  } */}
+                  Established on June 20, 2011 by Mr. Madhav Prasad Baral,
+                  Bindabasini Logistics was built on more than 25 years of
+                  experience in the logistics and transportation industry. From
+                  our humble entrepreneurial beginnings, we have grown into a
+                  trusted logistics partner, helping clients navigate the
+                  complexities of transportation management and customs
+                  clearance. With our own fleet of trailers, we make sure cargo
+                  moves reliably and efficiently across Nepal and beyond. Our
+                  mission is simple but powerful: to bring energy, innovation,
+                  and efficiency to logistics while helping businesses succeed
+                  in today’s fast-moving world. Every day, our team shows up
+                  with this vision in mind. We know how tough it can be to
+                  manage logistics on your own, and that’s why we’re passionate
+                  about guiding and supporting our clients at every step.
                 </p>
                 <p className="max-w-[600px] text-gray-600 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-                  {
+                  {/* {
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  }
+                  } */}
+                  We do more than just move goods. We provide data-driven,
+                  cost-saving insights so our customers can make smart decisions
+                  about their transportation needs. With a trusted carrier
+                  network that’s been tested over time, we secure dependable
+                  capacity, streamline operations, and create real value for
+                  businesses. For us, it’s not only about solving challenges or
+                  introducing advanced solutions—it’s also about how we do it.
+                  Every relationship we build is based on trust, collaboration,
+                  understanding, and respect. We treat our clients as partners
+                  and invest in long-term relationships that grow stronger with
+                  time. After more than a decade in service, one belief still
+                  drives everything we do: your success is our destination.
+                  That’s why businesses continue to stay with us year after
+                  year. We don’t just deliver goods—we deliver confidence,
+                  value, and growth. By creating flexible solutions that fit the
+                  unique needs of each client, we continue to build deep,
+                  lasting partnerships. At Bindabasini Logistics, we believe
+                  there is always a way to help every business improve, and we
+                  work tirelessly to make it happen.
                 </p>
               </div>
 
@@ -41,14 +74,14 @@ const About = () => {
               <div className="grid grid-cols-2 gap-8 pt-4">
                 <div className="space-y-2">
                   <div className="text-4xl md:text-5xl font-bold text-primary">
-                    2001
+                    2011
                   </div>
                   <div className="text-sm font-medium uppercase text-gray-500">
                     YEAR FOUNDED
                   </div>
                   <p className="text-gray-600 text-xs md:text-base">
-                    With the vision of bringing global procurement experts
-                    together
+                    Established with a mission to make logistics simpler,
+                    faster, and more reliable.
                   </p>
                 </div>
                 <div className="space-y-2">
@@ -71,20 +104,20 @@ const About = () => {
                     SATISFACTION
                   </div>
                   <p className="text-gray-600 text-xs md:text-base">
-                    With the vision of bringing global procurement experts
-                    together
+                    Building long-term client relationships through trust and
+                    reliability.
                   </p>
                 </div>
                 <div className="space-y-2">
                   <div className="text-4xl md:text-5xl font-bold text-primary">
-                    150+
+                    500+
                   </div>
                   <div className="text-sm font-medium uppercase text-gray-500">
                     CLIENTS WORLDWIDE
                   </div>
                   <p className="text-gray-600 text-xs md:text-base">
-                    With the vision of bringing global procurement experts
-                    together
+                    Partnering with businesses of all sizes across industries
+                    for over a decade.r
                   </p>
                 </div>
               </div>
@@ -119,30 +152,29 @@ const About = () => {
                 <h2 className="text-base font-semibold tracking-wide uppercase text-primary">
                   Message From Chairman
                 </h2>
-                <h3 className="max-w-[600px] text-xl font-semibold text-gray-800 md:text-2xl">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor
-                </h3>
               </div>
               <div className="max-w-[600px] text-muted-foreground text-base md:text-lg">
                 <p className="mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Importing goods into Nepal can be complicated, but at
+                  Bindabasini Logistics we make it simple, reliable, and
+                  stress-free. From handling customs in Kolkata to transport
+                  into Nepal and final delivery to your door, our team takes
+                  care of every step so you can focus on your business.
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  With over 25 years of experience, a strong network, and a
+                  dedicated team, we’ve become a trusted partner for companies
+                  across Nepal delivering not just goods, but confidence, value,
+                  and lasting relationships.
                 </p>
               </div>
               <div className="mt-2 flex items-center space-x-4">
                 <div>
                   <span className="block text-lg font-semibold text-gray-900">
-                    John Doe
+                    Mr. Madhav Prasad Baral
                   </span>
                   <span className="block text-sm text-primary font-medium">
-                    Chairman &amp; Founder
+                    Director
                   </span>
                 </div>
               </div>

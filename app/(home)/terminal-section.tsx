@@ -1,23 +1,29 @@
+"use client";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function TerminalSection() {
+  const router = useRouter();
   const cards = [
     {
       image: "/service1.jpg",
       alt: "ANNAPURNA TERMINALS PVT.LTD",
       title: <>ANNAPURNA TERMINALS PVT.LTD</>,
+      route: "/terminals/annapurna-terminals-pvt-ltd",
     },
     {
-      image: "/service2.jpg",
-      alt: "Logistic services in USA",
+      image: "/terminal-birgunj.JPG",
+      alt: "Terminal Birgunj",
       title: <>TRS HIMALAYAN LOJIPARK PVT.LTD</>,
+      route: "/terminals/trs-himalayan-lojipark-pvt-ltd",
     },
     {
       image: "/service3.jpg",
       alt: "Global logistics offers",
       title: <>PRISTINE VALLEY DRYPORT PVT.LTD.</>,
+      route: "/terminals/pristine-valley-dryport-pvt-ltd",
     },
   ];
 
@@ -63,6 +69,9 @@ export default function TerminalSection() {
                   <Button
                     variant="link"
                     className="text-white hover:text-white p-0 m-0 font-semibold group/btn -ml-3 flex items-center justify-center"
+                    onClick={() => {
+                      router.push(`${card.route}`);
+                    }}
                   >
                     Discover
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover/btn:translate-x-1 mt-1" />

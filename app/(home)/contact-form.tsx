@@ -1,24 +1,90 @@
-import { Mail, Phone, Clock } from "lucide-react";
+"use client";
+
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { AnimatedButton } from "@/components/shared/animated-button";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
+
+const contactSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.email("Invalid email"),
+  phone: z.string().min(1, "Phone is required"),
+  city: z.string().min(1, "City is required"),
+  message: z.string().min(1, "Message is required"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function ContactForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const [statusMessage, setStatusMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
+
+  const onSubmit = async (data: ContactFormData) => {
+    setStatusMessage(null); // reset previous message
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatusMessage({
+          type: "success",
+          text: "Thank you! Your inquiry has been received, and our team will contact you shortly.",
+        });
+        reset();
+      } else {
+        setStatusMessage({
+          type: "error",
+          text: "Failed to send message. Please try again.",
+        });
+      }
+    } catch (err) {
+      console.error(err);
+      setStatusMessage({
+        type: "error",
+        text: "Something went wrong. Please try again.",
+      });
+    }
+  };
+
   return (
-    <div className="w-full py-12 md:py-18 bg-gray-50 px-6 md:px-38 ">
+    <div className="w-full py-12 md:py-18 bg-gray-50 px-6 md:px-38">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Left Section: Contact Information */}
+        {/* Left Section */}
         <div className="space-y-8">
           <h1 className="text-4xl font-bold leading-tight text-gray-800">
             Get in touch with us
           </h1>
           <p className="text-gray-800 text-base leading-relaxed">
             Ready to streamline your shipping operations? Contact us today to
-            discuss your needs and discover how Nicholas Shipping Services can
-            elevate your cargo transportation experience.
+            discuss your needs.
           </p>
-
+          <div className="flex items-start space-x-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary border border-white/20 flex items-center justify-center">
+              <Phone className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Phone</h3>
+              <p className="text-gray-800">014984326</p>
+            </div>
+          </div>
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary border  flex items-center justify-center">
@@ -26,69 +92,84 @@ export default function ContactForm() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Email</h3>
-                <p className="text-gray-800">contact@shipping.com</p>
+                <p className="text-gray-800">bindabasinilogistic@gmail.com</p>
               </div>
             </div>
-
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary border border-white/20 flex items-center justify-center">
-                <Phone className="w-6 h-6 text-white" />
+                <MapPin className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold">Call Us</h3>
-                <p className="text-gray-800">(00) 112 365 489</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary border border-white/20 flex items-center justify-center">
-                <Clock className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold">
-                  Mon - Sat 9.00 - 18.00
-                </h3>
-                <p className="text-gray-800">Sunday Closed</p>
+                <h3 className="text-lg font-semibold">Address</h3>
+                <p className="text-gray-800">
+                  Nayabazaar Balaju, Valley Cold Store Complex
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right Section: Contact Form */}
-        <div className="md:mt-4 space-y-6">
+        {/* Right Section */}
+        <form onSubmit={handleSubmit(onSubmit)} className="md:mt-4 space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Input
-              type="text"
-              placeholder="Your name*"
-              className="bg-gray-50 border border-gray-300 text-gray-800 placeholder:text-gray-500 focus:ring-offset-0 focus:ring-0"
-            />
-            <Input
-              type="email"
-              placeholder="Email*"
-              className="bg-gray-50 border border-gray-300 text-gray-800 placeholder:text-gray-500 focus:ring-offset-0 focus:ring-0"
-            />
-            <Input
-              type="tel"
-              placeholder="Phone Number*"
-              className="bg-gray-50 border border-gray-300 text-gray-800 placeholder:text-gray-500 focus:ring-offset-0 focus:ring-0"
-            />
-            <Input
-              type="text"
-              placeholder="City*"
-              className="bg-gray-50 border border-gray-300 text-gray-800 placeholder:text-gray-500 focus:ring-offset-0 focus:ring-0"
-            />
+            <div>
+              <Input {...register("name")} placeholder="Your name*" />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name.message}</p>
+              )}
+            </div>
+            <div>
+              <Input {...register("email")} type="email" placeholder="Email*" />
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email.message}</p>
+              )}
+            </div>
+            <div>
+              <Input
+                {...register("phone")}
+                type="tel"
+                placeholder="Phone Number*"
+              />
+              {errors.phone && (
+                <p className="text-red-500 text-sm">{errors.phone.message}</p>
+              )}
+            </div>
+            <div>
+              <Input {...register("city")} placeholder="City*" />
+              {errors.city && (
+                <p className="text-red-500 text-sm">{errors.city.message}</p>
+              )}
+            </div>
           </div>
-          <Textarea
-            placeholder="Your Message"
-            rows={8}
-            className="bg-gray-50 border border-gray-300 text-gray-800 placeholder:text-gray-500 focus:ring-offset-0 focus:ring-0 resize-none h-40"
+          <div>
+            <Textarea
+              {...register("message")}
+              placeholder="Your Message"
+              rows={8}
+            />
+            {errors.message && (
+              <p className="text-red-500 text-sm">{errors.message.message}</p>
+            )}
+          </div>
+          <AnimatedButton
+            label="Submit Message"
+            type="submit"
+            disabled={isSubmitting}
           />
-          {/* <Button className="w-full bg-[#FF6B00] hover:bg-[#E05F00] text-white py-3 text-lg font-semibold">
-            Submit Message
-          </Button> */}
-          <AnimatedButton label="Submit Message" />
 
-        </div>
+          {/* Status message */}
+          {statusMessage && (
+            <p
+              className={`mt-1 font-medium ${
+                statusMessage.type === "success"
+                  ? "text-green-600"
+                  : "text-red-600"
+              }`}
+            >
+              {statusMessage.text}
+            </p>
+          )}
+        </form>
       </div>
     </div>
   );

@@ -3,8 +3,8 @@ import {
   ShieldCheck,
   Users,
   Lightbulb,
-  Flag,
-  Globe,
+  Handshake,
+  Sprout,
 } from "lucide-react";
 
 interface ValueCardProps {
@@ -31,39 +31,39 @@ export default function ValuesSection() {
   const values = [
     {
       icon: Crown,
-      title: "Quality",
+      title: "Reliability",
       description:
-        "Lorem ipsum dolor sit amet lorem consectetur adipiscing elit est vel semper nam porta arcu.",
+        "We keep our promises. Every delivery is handled with care so your goods arrive safely and on time.",
     },
     {
       icon: ShieldCheck,
       title: "Commitment",
       description:
-        "Lorem ipsum dolor sit amet lorem consectetur adipiscing elit est vel semper nam porta arcu.",
-    },
-    {
-      icon: Users,
-      title: "Teamwork",
-      description:
-        "Lorem ipsum dolor sit amet lorem consectetur adipiscing elit est vel semper nam porta arcu.",
+        " We give our best to every job, big or small, because your success is our success.",
     },
     {
       icon: Lightbulb,
       title: "Innovation",
       description:
-        "Lorem ipsum dolor sit amet lorem consectetur adipiscing elit est vel semper nam porta arcu.",
+        "We embrace smarter and simpler solutions that make logistics faster, easier, and more efficient.",
     },
     {
-      icon: Flag,
-      title: "Leadership",
+      icon: Users,
+      title: "Integrity",
       description:
-        "Lorem ipsum dolor sit amet lorem consectetur adipiscing elit est vel semper nam porta arcu.",
+        "We believe in honesty and transparency, so you always know you can rely on us.",
     },
     {
-      icon: Globe,
-      title: "Openness",
+      icon: Handshake,
+      title: "Collaboration ",
       description:
-        "Lorem ipsum dolor sit amet lorem consectetur adipiscing elit est vel semper nam porta arcu.",
+        "We achieve the best results by working together, listening closely, and building trust.",
+    },
+    {
+      icon: Sprout,
+      title: "Growth",
+      description:
+        "We grow with our clients, creating lasting improvements and value year after year.",
     },
   ];
 
@@ -82,9 +82,9 @@ export default function ValuesSection() {
           </div>
           <div className="lg:flex lg:justify-end lg:items-start">
             <p className="text-gray-500 text-base leading-relaxed max-w-md">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit tellus sem
-              pellentesque ac nulla tortor nulla non cursus hendrerit urna
-              tristique et tristique.
+              Our values are at the heart of everything we do. They are the
+              guiding principles that shape how we work with our clients,
+              partners, and team every single day.
             </p>
           </div>
         </div>

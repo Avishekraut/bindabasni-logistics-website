@@ -74,28 +74,28 @@ export function StatsSection() {
     <div ref={ref} className="w-full py-8 md:py-12 bg-gray-50">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 md:px-16">
         <StatItem
-          targetValue={9}
+          targetValue={25}
           suffix="K+"
           label="Deliveries Managed"
           duration={2500}
           start={inView}
         />
         <StatItem
-          targetValue={50}
+          targetValue={500}
           suffix="+"
           label="Active Clients"
           duration={2500}
           start={inView}
         />
         <StatItem
-          targetValue={98}
+          targetValue={99}
           suffix="%"
           label="On-Time Delivery Rate"
           duration={2500}
           start={inView}
         />
         <StatItem
-          targetValue={40}
+          targetValue={10}
           suffix="+"
           label="Industry Awards"
           duration={2500}

@@ -18,21 +18,21 @@ export function Footer() {
             />
           </Link>
           <p className="text-gray-400 max-w-lg">
-            Faucibus quis fringilla scelerisque dui. Amet parturient dui
-            venenatis amet sagittis viverra vel tincidunt. Orci tincidunt.
+            Bindabasini Logistics, founded in 2011, delivers fast, reliable, and
+            innovative logistics solutions backed by 25+ years of expertise.
           </p>
           <div className="text-gray-400 space-y-2">
             <div className="flex items-center gap-2">
               <Mail className="h-5 w-5 text-v0-green" />
-              <p>info@logistic.com</p>
+              <p>bindabasinilogistic@gmail.com</p>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-v0-green" />
-              <p>+1 (123) 456-7890</p>
+              <p> 014984326</p>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-v0-green" />
-              <p>123 Logistic St, City, Country</p>
+              <p>Nayabazaar Balaju, Valley Cold Store Complex</p>
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ export function Footer() {
       {/* Separator Line */}
       <div className="container mx-auto px-4 md:px-6 mt-8 pt-8 border-t border-gray-700">
         <div className="flex flex-start text-gray-400 text-sm">
-          <p>Copyright © 2023 Bindabasani Logistics</p>
+          <p>Copyright © 2025 Bindabasani Logistics</p>
         </div>
       </div>
     </footer>

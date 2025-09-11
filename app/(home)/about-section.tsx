@@ -29,7 +29,7 @@ export default function AboutSection() {
 
   return (
     <section className="py-16 md:py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-0">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Image */}
           <div className="relative">
@@ -39,7 +39,7 @@ export default function AboutSection() {
                 alt="Aerial view of container ship with colorful cargo containers"
                 width={600}
                 height={400}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto md:h-[340px] object-cover"
               />
             </div>
           </div>
@@ -56,25 +56,21 @@ export default function AboutSection() {
               </h2>
             </div>
 
-            <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
               <p>
                 Bindabasini Logistics was founded on June 20, 2011, by Mr.
                 Madhav Prasad Baral and is backed by over 25 years of experience
-                in transportation management and customs clearance. From the
-                outset, we have been dedicated to making logistics simpler,
-                faster, and more reliable for businesses of all sizes. With our
-                own fleet of trailers and a dedicated team, we make sure that
-                goods are moved smoothly and on time.
+                in transportation management and customs clearance. Our mission
+                is simple: make logistics faster, smarter, and more reliable for
+                businesses of all sizes.
               </p>
               <p>
-                Our mission is to bring innovation, reliability, and energy to
-                logistics while helping businesses grow. At Bindabasini
-                Logistics, we combine trusted carrier networks with smart,
-                cost-saving insights so clients can focus on their core
-                business. We believe success is a shared journey built on trust,
-                transparency, and respect. Every delivery is more than reaching
-                a destination; it&apos;s about driving our customers&apos;
-                success forward.
+                With our own fleet and a dedicated team, we ensure goods move
+                smoothly and on time. By combining trusted carrier networks with
+                cost saving insights, we help clients focus on their core
+                business. At Bindabasini Logistics, every delivery is more than
+                reaching a destination it&apos;s about driving your success
+                forward with trust, and innovation.
               </p>
             </div>
 

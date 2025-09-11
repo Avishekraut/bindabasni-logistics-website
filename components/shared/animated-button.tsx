@@ -8,7 +8,7 @@ interface AnimatedButtonProps {
   label: string;
   className?: string;
   onClick?: () => void;
-  type: "button" | "submit" | "reset" | undefined;
+  type?: "button" | "submit" | "reset" | undefined;
   disabled?: boolean;
 }
 

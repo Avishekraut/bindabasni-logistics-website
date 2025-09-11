@@ -14,8 +14,8 @@ export default function TerminalSection() {
       route: "/terminals/annapurna-terminals-pvt-ltd",
     },
     {
-      image: "/service2.jpg",
-      alt: "Logistic services in USA",
+      image: "/terminal-birgunj.JPG",
+      alt: "Terminal Birgunj",
       title: <>TRS HIMALAYAN LOJIPARK PVT.LTD</>,
       route: "/terminals/trs-himalayan-lojipark-pvt-ltd",
     },

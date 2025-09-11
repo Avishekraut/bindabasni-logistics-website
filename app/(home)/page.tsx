@@ -15,7 +15,7 @@ export default function Home() {
       <ServicesSection />
       <TerminalSection />
       <StatsSection />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <div className="px-4 md:px-38 bg-gray-50">
         <CtaSection />
       </div>

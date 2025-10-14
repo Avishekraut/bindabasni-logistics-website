@@ -7,10 +7,12 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import HamburgerMenuBtn from "./hamburger-menu-btn";
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +69,10 @@ export default function Navbar() {
 
           {/* Desktop CTA Button */}
           <div className="hidden lg:block">
-            <Button className="bg-primary hover:bg-primary/80 px-6 py-2 rounded-full font-medium text-white">
+            <Button
+              className="bg-primary hover:bg-primary/80 px-6 py-2 rounded-full font-medium text-white"
+              onClick={() => router.push("/contact")}
+            >
               GET A QUOTE
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

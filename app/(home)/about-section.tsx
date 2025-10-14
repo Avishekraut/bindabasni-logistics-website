@@ -35,11 +35,12 @@ export default function AboutSection() {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/about-us.jpg"
+                src="/about-page-home.jpg"
                 alt="Aerial view of container ship with colorful cargo containers"
                 width={600}
                 height={400}
                 className="w-full h-auto md:h-[340px] object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -50,9 +51,9 @@ export default function AboutSection() {
               <span className="text-gray-500 text-sm font-medium tracking-wide uppercase">
                 About Us
               </span>
-              <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight md:mt-2">
-                Have a Wide Range of Smart
-                <p className="text-primary">Solutions for Business</p>
+              <h2 className="text-4xl lg:text-3xl font-bold text-gray-900 leading-tight md:mt-2">
+                Driving Growth with Reliable, Innovative,
+                <p className="text-primary"> Sustainable Logistics</p>
               </h2>
             </div>
 

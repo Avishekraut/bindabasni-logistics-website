@@ -2,7 +2,7 @@ import React from "react";
 import PageHeading from "@/components/shared/page-heading";
 import Image from "next/image";
 import ValuesSection from "./components/values-section";
-import TeamSection from "./components/team-section";
+// import TeamSection from "./components/team-section";
 import CtaSection from "@/components/shared/cta-section";
 
 const About = () => {
@@ -22,51 +22,28 @@ const About = () => {
                 <h2 className="text-base font-semibold tracking-wide uppercase text-primary">
                   About Company
                 </h2>
-                <h3 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                <h3 className="text-3xl font-bold tracking-tight sm:text-3xl md:text-4xl">
                   {"Your Partner in Seamless Logistics"}
                 </h3>
                 <p className="max-w-[600px] text-gray-600 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-                  {/* {
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  } */}
-                  Established on June 20, 2011 by Mr. Madhav Prasad Baral,
-                  Bindabasini Logistics was built on more than 25 years of
-                  experience in the logistics and transportation industry. From
-                  our humble entrepreneurial beginnings, we have grown into a
-                  trusted logistics partner, helping clients navigate the
-                  complexities of transportation management and customs
-                  clearance. With our own fleet of trailers, we make sure cargo
-                  moves reliably and efficiently across Nepal and beyond. Our
-                  mission is simple but powerful: to bring energy, innovation,
-                  and efficiency to logistics while helping businesses succeed
-                  in today’s fast-moving world. Every day, our team shows up
-                  with this vision in mind. We know how tough it can be to
-                  manage logistics on your own, and that’s why we’re passionate
-                  about guiding and supporting our clients at every step.
+                  Founded on June 20, 2011, by Mr. Madhav Prasad Baral,
+                  Bindabasini Logistics is built on over 25 years of expertise
+                  in logistics and transportation. From our early
+                  entrepreneurial roots, we have grown into a trusted partner,
+                  simplifying transportation management and customs clearance
+                  across Nepal and beyond.
                 </p>
                 <p className="max-w-[600px] text-gray-600 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-                  {/* {
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  } */}
-                  We do more than just move goods. We provide data-driven,
-                  cost-saving insights so our customers can make smart decisions
-                  about their transportation needs. With a trusted carrier
-                  network that’s been tested over time, we secure dependable
-                  capacity, streamline operations, and create real value for
-                  businesses. For us, it’s not only about solving challenges or
-                  introducing advanced solutions—it’s also about how we do it.
-                  Every relationship we build is based on trust, collaboration,
-                  understanding, and respect. We treat our clients as partners
-                  and invest in long-term relationships that grow stronger with
-                  time. After more than a decade in service, one belief still
-                  drives everything we do: your success is our destination.
-                  That’s why businesses continue to stay with us year after
-                  year. We don’t just deliver goods—we deliver confidence,
-                  value, and growth. By creating flexible solutions that fit the
-                  unique needs of each client, we continue to build deep,
-                  lasting partnerships. At Bindabasini Logistics, we believe
-                  there is always a way to help every business improve, and we
-                  work tirelessly to make it happen.
+                  With our own fleet of trailers and a reliable carrier network,
+                  we ensure cargo moves smoothly, efficiently, and on time.
+                  Beyond moving goods, we provide data-driven insights to help
+                  businesses cut costs, secure dependable capacity, and
+                  streamline operations. Our mission is clear: to bring
+                  innovation, energy, and efficiency to logistics while
+                  supporting every client&apos;s success. Guided by trust,
+                  collaboration, and respect, we build long-term partnerships
+                  that deliver confidence, value, and growth. For us, your
+                  success is our destination.
                 </p>
               </div>
 
@@ -117,7 +94,7 @@ const About = () => {
                   </div>
                   <p className="text-gray-600 text-xs md:text-base">
                     Partnering with businesses of all sizes across industries
-                    for over a decade.r
+                    for over a decade.
                   </p>
                 </div>
               </div>
@@ -127,15 +104,16 @@ const About = () => {
             <div className="relative w-full h-[400px] flex items-center justify-center">
               <div className="absolute top-0 left-0 w-[70%] h-[70%] rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/service2.jpg"
+                  src="/about_1.jpg"
                   alt="Yellow and red truck on the road"
                   fill
                   className="object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute -bottom-10 md:-bottom-20 right-0 w-[70%] h-[70%] rounded-xl overflow-hidden shadow-lg z-10">
                 <Image
-                  src="/service3.jpg"
+                  src="/terminal-birgunj8.JPG"
                   alt="Shipping crane lifting a container at sunset"
                   fill
                   className="object-cover"
@@ -190,7 +168,7 @@ const About = () => {
             </div>
           </div>
 
-          <TeamSection />
+          {/* <TeamSection /> */}
           <CtaSection />
         </div>
       </section>

@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import { AnimatedButton } from "@/components/shared/animated-button";
+import { useRouter } from "next/navigation";
 
 export default function CtaSection() {
+  const router = useRouter();
   return (
     <section className="flex justify-center bg-gray-50 py-6 md:py-12">
       <div className="bg-primary/5 rounded-xl overflow-hidden w-full flex flex-col md:flex-row items-center px-8 md:px-12 py-6 md:py-6">
@@ -13,12 +16,15 @@ export default function CtaSection() {
             Join countless other businesses that have streamlined their
             logistics with our cutting-edge solutions
           </p>
-          <AnimatedButton label="Get A Free Quote" />
+          <AnimatedButton
+            label="Get A Free Quote"
+            onClick={() => router.push("/contact")}
+          />
         </div>
         <div className="flex-1 flex justify-center md:justify-end">
           <Image
             src="/red-truck.png"
-            alt=" delivery truck"
+            alt="delivery truck"
             width={500}
             height={300}
             className="object-contain w-[480px] h-74 rounded-lg"

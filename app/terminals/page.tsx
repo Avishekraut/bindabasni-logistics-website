@@ -16,7 +16,7 @@ export default function TerminalsPage() {
       route: "annapurna-terminals-pvt-ltd",
     },
     {
-      image: "/service2.jpg",
+      image: "/terminal-birgunj.JPG",
       alt: "Logistic services in USA",
       title: <>TRS HIMALAYAN LOJIPARK PVT.LTD</>,
       location: "Birgunj",

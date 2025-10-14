@@ -1,287 +1,56 @@
-// "use client";
-
-// import { useState } from "react";
-// import Image from "next/image";
-// import { Button } from "@/components/ui/button";
-// import { Dialog, DialogContent } from "@/components/ui/dialog";
-// import { ChevronLeft, ChevronRight, X } from "lucide-react";
-
-// const galleryImages = [
-//   {
-//     id: 1,
-//     src: "/service1.jpg",
-//     alt: "Team collaboration in modern office",
-//     title: "Team Collaboration",
-//   },
-//   {
-//     id: 2,
-//     src: "/service2.jpg",
-//     alt: "Strategic planning meeting",
-//     title: "Strategic Planning",
-//   },
-//   {
-//     id: 3,
-//     src: "/service3.jpg",
-//     alt: "Company headquarters building",
-//     title: "Our Headquarters",
-//   },
-//   {
-//     id: 4,
-//     src: "/service4.jpg",
-//     alt: "Team celebrating success",
-//     title: "Celebrating Success",
-//   },
-//   {
-//     id: 5,
-//     src: "/service5.jpg",
-//     alt: "Innovation lab workspace",
-//     title: "Innovation Lab",
-//   },
-//   {
-//     id: 6,
-//     src: "/service3.jpg",
-//     alt: "Company networking event",
-//     title: "Networking Event",
-//   },
-//   {
-//     id: 7,
-//     src: "/service2.jpg",
-//     alt: "Employee training workshop",
-//     title: "Training Workshop",
-//   },
-//   {
-//     id: 8,
-//     src: "/service3.jpg",
-//     alt: "Awards ceremony",
-//     title: "Awards Ceremony",
-//   },
-//   {
-//     id: 9,
-//     src: "/service4.jpg",
-//     alt: "Team bonding in break room",
-//     title: "Team Bonding",
-//   },
-// ];
-
-// export function Gallery() {
-//   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const openImage = (imageId: number) => {
-//     setSelectedImage(imageId);
-//     setIsOpen(true);
-//   };
-
-//   const closeImage = () => {
-//     setIsOpen(false);
-//     setSelectedImage(null);
-//   };
-
-//   const goToPrevious = () => {
-//     if (selectedImage === null) return;
-//     const currentIndex = galleryImages.findIndex(
-//       (img) => img.id === selectedImage
-//     );
-//     const previousIndex =
-//       currentIndex > 0 ? currentIndex - 1 : galleryImages.length - 1;
-//     setSelectedImage(galleryImages[previousIndex].id);
-//   };
-
-//   const goToNext = () => {
-//     if (selectedImage === null) return;
-//     const currentIndex = galleryImages.findIndex(
-//       (img) => img.id === selectedImage
-//     );
-//     const nextIndex =
-//       currentIndex < galleryImages.length - 1 ? currentIndex + 1 : 0;
-//     setSelectedImage(galleryImages[nextIndex].id);
-//   };
-
-//   const handleKeyDown = (e: KeyboardEvent) => {
-//     if (!isOpen) return;
-
-//     switch (e.key) {
-//       case "ArrowLeft":
-//         goToPrevious();
-//         break;
-//       case "ArrowRight":
-//         goToNext();
-//         break;
-//       case "Escape":
-//         closeImage();
-//         break;
-//     }
-//   };
-
-//   // Add keyboard event listener
-//   useState(() => {
-//     document.addEventListener("keydown", handleKeyDown);
-//     return () => document.removeEventListener("keydown", handleKeyDown);
-//   });
-
-//   const currentImage = selectedImage
-//     ? galleryImages.find((img) => img.id === selectedImage)
-//     : null;
-
-//   return (
-//     <>
-//       {/* Gallery Grid */}
-//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-//         {galleryImages.map((image) => (
-//           <div
-//             key={image.id}
-//             className="group relative overflow-hidden rounded-lg bg-card shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
-//             onClick={() => openImage(image.id)}
-//           >
-//             <div className="aspect-[4/3] relative">
-//               <Image
-//                 src={image.src}
-//                 alt={image.alt}
-//                 fill
-//                 className="object-cover transition-transform duration-300 group-hover:scale-105"
-//                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-//               />
-//               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-//               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-//                 <h3 className="text-white font-semibold text-lg">
-//                   {image.title}
-//                 </h3>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-
-//       {/* Image Viewer Modal */}
-//       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-//         <DialogContent className="h-full max-h-[90vh] p-0 border-none">
-//           {currentImage && (
-//             <div className="relative w-full h-full flex items-center justify-center">
-//               {/* Close Button */}
-//               <Button
-//                 variant="ghost"
-//                 size="icon"
-//                 className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
-//                 onClick={closeImage}
-//               >
-//                 <X className="h-6 w-6" />
-//               </Button>
-
-//               {/* Previous Button */}
-//               <Button
-//                 variant="ghost"
-//                 size="icon"
-//                 className="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-white hover:bg-white/20"
-//                 onClick={goToPrevious}
-//               >
-//                 <ChevronLeft className="h-8 w-8" />
-//               </Button>
-
-//               {/* Next Button */}
-//               <Button
-//                 variant="ghost"
-//                 size="icon"
-//                 className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white hover:bg-white/20"
-//                 onClick={goToNext}
-//               >
-//                 <ChevronRight className="h-8 w-8" />
-//               </Button>
-
-//               {/* Main Image */}
-//               <div className="relative w-full h-full flex items-center justify-center p-8">
-//                 <div className="relative max-w-full max-h-full">
-//                   <Image
-//                     src={currentImage.src}
-//                     alt={currentImage.alt}
-//                     width={1200}
-//                     height={800}
-//                     className="max-w-full max-h-full object-contain"
-//                     priority
-//                   />
-//                 </div>
-//               </div>
-
-//               {/* Image Info */}
-//               <div className="absolute bottom-4 left-4 right-4 text-center">
-//                 <h3 className="text-white text-xl font-semibold mb-1">
-//                   {currentImage.title}
-//                 </h3>
-//                 <p className="text-white/80 text-sm">
-//                   {galleryImages.findIndex((img) => img.id === selectedImage) +
-//                     1}
-//                   of {galleryImages.length}
-//                 </p>
-//               </div>
-//             </div>
-//           )}
-//         </DialogContent>
-//       </Dialog>
-//     </>
-//   );
-// }
-
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const galleryImages = [
   {
     id: 1,
-    src: "/service1.jpg",
-    alt: "Team collaboration in modern office",
-    title: "Team Collaboration",
+    src: "/terminal-birgunj8.JPG",
+    alt: "Gallery",
   },
   {
     id: 2,
-    src: "/service2.jpg",
-    alt: "Strategic planning meeting",
-    title: "Strategic Planning",
+    src: "/gallery/about_1.jpg",
+    alt: "Gallery",
   },
   {
     id: 3,
-    src: "/service3.jpg",
+    src: "/gallery/birgunj1.JPG",
     alt: "Company headquarters building",
-    title: "Our Headquarters",
   },
   {
     id: 4,
-    src: "/service4.jpg",
-    alt: "Team celebrating success",
-    title: "Celebrating Success",
+    src: "/gallery/terminal-birgunj2.JPG",
+    alt: "Gallery",
   },
   {
     id: 5,
-    src: "/service5.jpg",
-    alt: "Innovation lab workspace",
-    title: "Innovation Lab",
+    src: "/gallery/terminal-birgunj3.JPG",
+    alt: "Gallery",
   },
   {
     id: 6,
-    src: "/service3.jpg",
-    alt: "Company networking event",
-    title: "Networking Event",
+    src: "/gallery/terminal-birgunj4.JPG",
+    alt: "Gallery",
   },
   {
     id: 7,
-    src: "/service2.jpg",
-    alt: "Employee training workshop",
-    title: "Training Workshop",
+    src: "/gallery/terminal-birgunj6.JPG",
+    alt: "Gallery",
   },
   {
     id: 8,
-    src: "/service3.jpg",
-    alt: "Awards ceremony",
-    title: "Awards Ceremony",
+    src: "/terminal-birgunj.JPG",
+    alt: "Gallery",
   },
   {
     id: 9,
-    src: "/service4.jpg",
-    alt: "Team bonding in break room",
-    title: "Team Bonding",
+    src: "/gallery/gallery2.JPG",
+    alt: "Gallery ",
   },
 ];
 
@@ -335,11 +104,11 @@ export function Gallery() {
     }
   };
 
-  // Add keyboard event listener
-  useState(() => {
+  // Add keyboard event listener (client-side only)
+  useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  });
+  }, [isOpen, handleKeyDown]);
 
   const currentImage = selectedImage
     ? galleryImages.find((img) => img.id === selectedImage)
@@ -362,13 +131,9 @@ export function Gallery() {
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white font-semibold text-lg">
-                  {image.title}
-                </h3>
-              </div>
             </div>
           </div>
         ))}
@@ -415,9 +180,6 @@ export function Gallery() {
 
               {/* Image Info */}
               <div className="absolute bottom-0 left-4 right-4 text-center">
-                <h3 className="text-gray-800 text-xl font-semibold mb-1">
-                  {currentImage.title}
-                </h3>
                 <p className="text-gray-600 text-sm">
                   {galleryImages.findIndex((img) => img.id === selectedImage) +
                     1}{" "}

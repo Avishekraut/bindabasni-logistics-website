@@ -3,7 +3,6 @@ import AboutSection from "./about-section";
 import ServicesSection from "./services-section";
 import TerminalSection from "./terminal-section";
 import { StatsSection } from "./stats-section";
-import Testimonials from "./testimonial-section";
 import CtaSection from "../../components/shared/cta-section";
 import ContactForm from "./contact-form";
 

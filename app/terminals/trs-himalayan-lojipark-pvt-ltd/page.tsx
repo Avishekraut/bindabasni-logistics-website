@@ -20,11 +20,6 @@ export default function AnnapurnaTerminal() {
                 TRS HIMALAYAN LOJIPARK PVT.LTD
               </h2>
 
-              <p className="text-gray-600 text-sm leading-relaxed mb-8">
-                Diam vitae facilisis quis rhoncus ultrices vitae, viverra
-                habitasse varius Aliquam sapien
-              </p>
-
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center">
@@ -33,7 +28,7 @@ export default function AnnapurnaTerminal() {
                   <div>
                     <p className="text-sm text-gray-500">Email:</p>
                     <p className="font-medium text-gray-900">
-                      branch@company.com
+                      bindabasinilogistic@gmail.com
                     </p>
                   </div>
                 </div>
@@ -44,7 +39,7 @@ export default function AnnapurnaTerminal() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Phone:</p>
-                    <p className="font-medium text-gray-900">+977 9804023691</p>
+                    <p className="font-medium text-gray-900">014984326</p>
                   </div>
                 </div>
 
@@ -55,9 +50,9 @@ export default function AnnapurnaTerminal() {
                   <div>
                     <p className="text-sm text-gray-500">Address:</p>
                     <p className="font-medium text-gray-900">
-                      Inland Clearence Deport,
+                      ICP - Birgunj,
                       <br />
-                      Bhairahawa
+                      Nepal
                     </p>
                   </div>
                 </div>
@@ -72,8 +67,8 @@ export default function AnnapurnaTerminal() {
             {/* Hero Image */}
             <div className="relative h-96">
               <Image
-                src="/service2.jpg"
-                alt="Annapurna Terminal"
+                src="/terminal-birgunj.JPG"
+                alt="TRS Himalayan Loji Park Terminal"
                 className="w-full h-full object-cover"
                 width={600}
                 height={400}
@@ -84,22 +79,24 @@ export default function AnnapurnaTerminal() {
             <div className="p-8">
               <div className="prose prose-gray max-w-none">
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit. Mauris
-                  arcu nullam the as integer quam dolor nunc that semper. Ornare
-                  non nulla as faucibus pulvinar vulputate neque. The as
-                  Suscipit tristique nam it enim mauris arcu consectetur platea.
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit. Mauris
-                  arcu nullam the as integer at quam dolor nunc semper. Ornare
-                  non nulla as faucibus pulvinar vulputate neque.
+                  TRS Himalayan Logipark Pvt. Ltd., a joint venture between
+                  Bindabasini Logistics Pvt. Ltd. of Nepal, TRS Lift and Shift
+                  Services Pvt. Ltd., and Apeejay Shipping Ltd. of India, has
+                  been entrusted with the operation and management of the
+                  Birgunj Integrated Check Post (ICP). The company secured the
+                  highest score in the evaluation process, demonstrating its
+                  capability to handle this critical cross-border trade hub.
                 </p>
 
                 <p className="text-gray-600 leading-relaxed mb-8">
-                  The as Suscipit tristique nam it enim mauris consectetur
-                  platea.Lorem ipsum dolor sit amet consectetur that adipiscing
-                  elit. Mauris arcu nullam the as integer quam dolor nunc
-                  semper. Ornare non nulla as faucibus pulvinar vulputate neque.
-                  The as Suscipit tristique nam it enim mauris consectetur
-                  platea.
+                  On March 20, an official five-year agreement was signed by
+                  Madhav Prasad Baral, representing TRS Himalayan Logipark Pvt.
+                  Ltd., and Harekrishna Mishra, Deputy Director of the Nepal
+                  Intermodal Transport Development Board (NITDB). The ceremony
+                  was attended by NITDB Executive Director Ashish Gajurel, board
+                  employees, and company representatives, marking the beginning
+                  of a public-private partnership aimed at strengthening Nepal’s
+                  trade infrastructure.
                 </p>
 
                 {/* Bullet Points */}
@@ -109,8 +106,9 @@ export default function AnnapurnaTerminal() {
                       <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                     </div>
                     <p className="text-gray-700 leading-relaxed">
-                      Lorem ipsum dolor consectetur the nunc semper pulvinar
-                      vulputate neque.
+                      <strong>Five-Year Lease Agreement:</strong> TRS Himalayan
+                      Logipark will operate and manage the Birgunj ICP for five
+                      years under NITDB’s regulatory oversight.
                     </p>
                   </div>
 
@@ -119,7 +117,9 @@ export default function AnnapurnaTerminal() {
                       <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                     </div>
                     <p className="text-gray-700 leading-relaxed">
-                      Dolor consectetur the nunc pulvinar vulputate neque.
+                      <strong>Investment Commitment:</strong> The company will
+                      pay a minimum lease recovery of approximately Rs. 1.81
+                      billion over the contract period.
                     </p>
                   </div>
 
@@ -128,17 +128,29 @@ export default function AnnapurnaTerminal() {
                       <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                     </div>
                     <p className="text-gray-700 leading-relaxed">
-                      Consectetur the nunc semper pulvinar vulputate neque.
+                      <strong>Performance-Based Payments:</strong> Additional
+                      fees will be paid if vehicle traffic exceeds projections,
+                      ensuring fair revenue sharing.
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center mt-0.5">
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">
+                      <strong>Competitive Selection:</strong> TRS Himalayan
+                      Logipark was chosen through an international bidding
+                      process among five qualified contenders.
                     </p>
                   </div>
                 </div>
 
                 <p className="text-gray-600 leading-relaxed mt-8">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit. Mauris
-                  arcu nullam the as integer quam dolor nunc that semper. Ornare
-                  non nulla as faucibus pulvinar vulputate neque. The as
-                  Suscipit tristique nam it enim mauris arcu consectetur platea.
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                  By leveraging private sector efficiency and investment, the
+                  operation of the Birgunj ICP under TRS Himalayan Logipark Pvt.
+                  Ltd. is expected to enhance cross-border trade, reduce costs,
+                  and bring greater agility to Nepal’s logistics ecosystem.
                 </p>
               </div>
             </div>

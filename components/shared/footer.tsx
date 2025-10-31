@@ -43,50 +43,35 @@ export function Footer() {
             <h3 className="text-lg font-semibold">Company</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="/about"
+                  className="hover:text-white transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Our Partners
+                <Link
+                  href="/services"
+                  className="hover:text-white transition-colors"
+                >
+                  Services
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Careers
+                <Link
+                  href="/terminals"
+                  className="hover:text-white transition-colors"
+                >
+                  Terminals
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Our Network
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources Section */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Resources</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Packing Supplies
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Faqs
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Pricing and Quotes
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Tips and Guides
+                <Link
+                  href="/gallery"
+                  className="hover:text-white transition-colors"
+                >
+                  Gallery
                 </Link>
               </li>
             </ul>
@@ -97,22 +82,17 @@ export function Footer() {
             <h3 className="text-lg font-semibold">Help</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Customer Support
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Contact
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Delivery Details
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/terms" className="hover:text-white transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/privacy" className="hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
               </li>

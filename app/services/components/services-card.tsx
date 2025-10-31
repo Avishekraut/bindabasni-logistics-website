@@ -11,7 +11,7 @@ export function ServicesCard({ servicesData }: { servicesData: Service[] }) {
           key={service.id}
           className="flex flex-col lg:flex-row bg-primary/8 rounded-b-lg md:rounded-lg"
         >
-          <div className="relative lg:w-1/2 h-64 lg:h-[500px]">
+          <div className="relative lg:w-1/2 h-64 lg:h-auto">
             <Image
               src={service.image}
               alt={service.title}

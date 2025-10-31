@@ -16,7 +16,7 @@ export default function TerminalsPage() {
       route: "annapurna-terminals-pvt-ltd",
     },
     {
-      image: "/service2.jpg",
+      image: "/terminal-birgunj.JPG",
       alt: "Logistic services in USA",
       title: <>TRS HIMALAYAN LOJIPARK PVT.LTD</>,
       location: "Birgunj",
@@ -26,7 +26,7 @@ export default function TerminalsPage() {
       image: "/service3.jpg",
       alt: "Global logistics offers",
       title: <>PRISTINE VALLEY DRYPORT PVT.LTD</>,
-      location: "Kathmandu",
+      location: "Birgunj",
       route: "pristine-valley-dryport-pvt-ltd",
     },
   ];

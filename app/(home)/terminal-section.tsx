@@ -56,6 +56,7 @@ export default function TerminalSection() {
                   alt={card.alt}
                   fill
                   className="object-cover"
+                  loading="lazy"
                 />
                 <div className={`absolute inset-0 bg-black/40`}></div>
               </div>

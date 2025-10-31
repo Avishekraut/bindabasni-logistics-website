@@ -158,6 +158,7 @@ export default function ServicesSection() {
                           alt={service.title}
                           fill
                           className="object-cover"
+                          loading="lazy"
                         />
 
                         <div className="absolute bottom-4 right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center">

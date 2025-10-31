@@ -63,7 +63,7 @@ export default function HeroSection() {
           >
             Welcome to
             <br />
-            Delivery Shipping
+            Bindabasini Logistics
             <br />
             Services
           </motion.h1>
@@ -72,9 +72,10 @@ export default function HeroSection() {
             variants={itemVariants}
             className="text-base text-white/90 mb-10 leading-relaxed max-w-lg"
           >
-            In augue ligula, feugiat ut nulla consequat. Ut est lacus, molestie
-            in arcu no, iaculis vehicula ipsum. Nunc faucibus, nisl id dapibus
-            finibus, enim diam interdum nulla, sed laoreet risus lectus.
+            Smart, reliable, seamless logistics delivering success on time,
+            every time. At Bindabasini Logistics, we combine expertise,
+            innovation, and trusted networks to move cargo securely,
+            efficiently, and hassle-free.
           </motion.p>
 
           <motion.div variants={itemVariants}>

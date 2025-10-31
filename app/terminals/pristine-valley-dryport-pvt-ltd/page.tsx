@@ -20,11 +20,6 @@ export default function AnnapurnaTerminal() {
                 PRISTINE VALLEY DRYPORT PVT.LTD
               </h2>
 
-              <p className="text-gray-600 text-sm leading-relaxed mb-8">
-                Diam vitae facilisis quis rhoncus ultrices vitae, viverra
-                habitasse varius Aliquam sapien
-              </p>
-
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center">
@@ -33,7 +28,7 @@ export default function AnnapurnaTerminal() {
                   <div>
                     <p className="text-sm text-gray-500">Email:</p>
                     <p className="font-medium text-gray-900">
-                      branch@company.com
+                      bindabasinilogistic@gmail.com
                     </p>
                   </div>
                 </div>
@@ -44,7 +39,7 @@ export default function AnnapurnaTerminal() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Phone:</p>
-                    <p className="font-medium text-gray-900">+977 9804023691</p>
+                    <p className="font-medium text-gray-900">014984326</p>
                   </div>
                 </div>
 
@@ -55,9 +50,9 @@ export default function AnnapurnaTerminal() {
                   <div>
                     <p className="text-sm text-gray-500">Address:</p>
                     <p className="font-medium text-gray-900">
-                      Inland Clearence Deport,
+                      Dryport Birgunj,
                       <br />
-                      Bhairahawa
+                      Nepal
                     </p>
                   </div>
                 </div>
@@ -73,7 +68,7 @@ export default function AnnapurnaTerminal() {
             <div className="relative h-96">
               <Image
                 src="/service2.jpg"
-                alt="Annapurna Terminal"
+                alt="Pristine Valley Dry Port"
                 className="w-full h-full object-cover"
                 width={600}
                 height={400}
@@ -84,33 +79,31 @@ export default function AnnapurnaTerminal() {
             <div className="p-8">
               <div className="prose prose-gray max-w-none">
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit. Mauris
-                  arcu nullam the as integer quam dolor nunc that semper. Ornare
-                  non nulla as faucibus pulvinar vulputate neque. The as
-                  Suscipit tristique nam it enim mauris arcu consectetur platea.
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit. Mauris
-                  arcu nullam the as integer at quam dolor nunc semper. Ornare
-                  non nulla as faucibus pulvinar vulputate neque.
+                  Pristine Valley Dryport Pvt. Ltd. is a modern logistics and
+                  transportation hub dedicated to supporting Nepal’s growing
+                  international trade. As an inland terminal connected to major
+                  seaports through road and rail networks, it serves as a
+                  critical link for consolidating, storing, and forwarding goods
+                  to their final destinations with efficiency and reliability.
                 </p>
 
                 <p className="text-gray-600 leading-relaxed mb-8">
-                  The as Suscipit tristique nam it enim mauris consectetur
-                  platea.Lorem ipsum dolor sit amet consectetur that adipiscing
-                  elit. Mauris arcu nullam the as integer quam dolor nunc
-                  semper. Ornare non nulla as faucibus pulvinar vulputate neque.
-                  The as Suscipit tristique nam it enim mauris consectetur
-                  platea.
+                  By offering integrated dry port operations, freight handling,
+                  and warehousing solutions, Pristine Valley Dryport ensures
+                  that businesses have access to seamless supply chain services.
+                  Its facilities are designed to reduce congestion at border
+                  points, improve cargo flow, and provide a secure environment
+                  for goods in transit.
                 </p>
 
-                {/* Bullet Points */}
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center mt-0.5">
                       <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                     </div>
                     <p className="text-gray-700 leading-relaxed">
-                      Lorem ipsum dolor consectetur the nunc semper pulvinar
-                      vulputate neque.
+                      <strong>Freight Handling:</strong> Professional cargo
+                      management to ensure smooth import and export processes.
                     </p>
                   </div>
 
@@ -119,7 +112,9 @@ export default function AnnapurnaTerminal() {
                       <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                     </div>
                     <p className="text-gray-700 leading-relaxed">
-                      Dolor consectetur the nunc pulvinar vulputate neque.
+                      <strong>Warehousing Facilities:</strong> Secure storage
+                      solutions for both short-term and long-term needs, with
+                      easy accessibility.
                     </p>
                   </div>
 
@@ -128,17 +123,19 @@ export default function AnnapurnaTerminal() {
                       <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                     </div>
                     <p className="text-gray-700 leading-relaxed">
-                      Consectetur the nunc semper pulvinar vulputate neque.
+                      <strong>Connectivity:</strong> Strategic links to key
+                      seaports via road and rail networks, ensuring efficient
+                      cargo movement.
                     </p>
                   </div>
                 </div>
 
                 <p className="text-gray-600 leading-relaxed mt-8">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit. Mauris
-                  arcu nullam the as integer quam dolor nunc that semper. Ornare
-                  non nulla as faucibus pulvinar vulputate neque. The as
-                  Suscipit tristique nam it enim mauris arcu consectetur platea.
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                  With its commitment to reliability, efficiency, and
+                  customer-focused solutions, Pristine Valley Dryport Pvt. Ltd.
+                  plays a vital role in strengthening Nepal’s trade
+                  infrastructure and enabling businesses to thrive in the global
+                  market.
                 </p>
               </div>
             </div>

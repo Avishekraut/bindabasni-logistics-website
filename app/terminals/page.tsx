@@ -26,7 +26,7 @@ export default function TerminalsPage() {
       image: "/service3.jpg",
       alt: "Global logistics offers",
       title: <>PRISTINE VALLEY DRYPORT PVT.LTD</>,
-      location: "Kathmandu",
+      location: "Birgunj",
       route: "pristine-valley-dryport-pvt-ltd",
     },
   ];

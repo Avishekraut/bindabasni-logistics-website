@@ -50,9 +50,9 @@ export default function AnnapurnaTerminal() {
                   <div>
                     <p className="text-sm text-gray-500">Address:</p>
                     <p className="font-medium text-gray-900">
-                      Inland Clearence Deport,
+                      Dryport Birgunj,
                       <br />
-                      Bhairahawa
+                      Nepal
                     </p>
                   </div>
                 </div>

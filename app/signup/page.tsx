@@ -9,6 +9,8 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { SignupFormData, signupSchema } from "./signupSchema";
 import { registerUser } from "@/apiServices/auth";
+import { AxiosError } from "axios";
+import { StrapiErrorResponse } from "@/types/shared";
 
 export default function SignupPage() {
   const {
@@ -22,15 +24,29 @@ export default function SignupPage() {
 
   const mutation = useMutation({
     mutationFn: registerUser,
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast.success("Account created successfully! Please log in.");
       reset();
     },
-    onError: (error: any) => {
-      const message =
-        error.response?.data?.message ||
-        error.message ||
-        "Failed to create account. Please try again.";
+    onError: (error: Error) => {
+      let message = "Failed to create account. Please try again.";
+
+      if (error instanceof AxiosError) {
+        const errorData = error.response?.data as
+          | StrapiErrorResponse
+          | undefined;
+
+        if (errorData?.error?.message) {
+          message = errorData.error.message;
+        } else if (errorData?.message) {
+          message = errorData.message;
+        } else if (error.message) {
+          message = error.message;
+        }
+      } else if (error instanceof Error) {
+        message = error.message;
+      }
+
       toast.error(message);
     },
   });
@@ -46,7 +62,8 @@ export default function SignupPage() {
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-3">Create an account</h1>
           <p className="text-muted-foreground">
-            Let's get started. Fill in the details below to create your account.
+            Let&apos;s get started. Fill in the details below to create your
+            account.
           </p>
         </div>
 

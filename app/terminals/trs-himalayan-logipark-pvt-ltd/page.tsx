@@ -8,7 +8,7 @@ export default function AnnapurnaTerminal() {
     <div className="min-h-screen bg-gray-50">
       <PageHeading
         title="Terminals"
-        breadcrumb={["Home", "Terminals", "TRS HIMALAYAN LOJIPARK PVT.LTD"]}
+        breadcrumb={["Home", "Terminals", "TRS HIMALAYAN LOGIPARK PVT.LTD"]}
         backgroundImage="/hero-section-bg.png"
       />
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 py-20 px-20">
@@ -17,7 +17,7 @@ export default function AnnapurnaTerminal() {
           <Card className="bg-white shadow-sm border-0 rounded-2xl overflow-hidden">
             <CardContent className="p-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                TRS HIMALAYAN LOJIPARK PVT.LTD
+                TRS HIMALAYAN LOGIPARK PVT.LTD
               </h2>
 
               <div className="space-y-6">

@@ -3,6 +3,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { JWT } from "next-auth/jwt";
 import { User as NextAuthUser } from "next-auth";
 import api from "@/lib/axiosInstance";
+import { AxiosError } from "axios";
+import { StrapiErrorResponse } from "@/types/shared";
 
 interface CustomUser extends NextAuthUser {
   id: string;
@@ -65,16 +67,24 @@ const handler = NextAuth({
           } else {
             throw new Error("Login failed");
           }
-        } catch (error: any) {
-          if (error.response?.data?.error?.message) {
-            throw new Error(error.response.data.error.message);
-          } else if (error.response?.data?.message) {
-            throw new Error(error.response.data.message);
-          } else if (error.message) {
+        } catch (error) {
+          if (error instanceof AxiosError) {
+            const errorData = error.response?.data as
+              | StrapiErrorResponse
+              | undefined;
+
+            if (errorData?.error?.message) {
+              throw new Error(errorData.error.message);
+            } else if (errorData?.message) {
+              throw new Error(errorData.message);
+            } else if (error.message) {
+              throw new Error(error.message);
+            }
+          } else if (error instanceof Error) {
             throw new Error(error.message);
-          } else {
-            throw new Error("Login failed. Please try again.");
           }
+
+          throw new Error("Login failed. Please try again.");
         }
       },
     }),

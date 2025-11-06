@@ -16,8 +16,8 @@ export default function TerminalSection() {
     {
       image: "/terminal-birgunj.JPG",
       alt: "Terminal Birgunj",
-      title: <>TRS HIMALAYAN LOJIPARK PVT.LTD</>,
-      route: "/terminals/trs-himalayan-lojipark-pvt-ltd",
+      title: <>TRS HIMALAYAN LOGIPARK PVT.LTD</>,
+      route: "/terminals/trs-himalayan-logipark-pvt-ltd",
     },
     {
       image: "/service3.jpg",

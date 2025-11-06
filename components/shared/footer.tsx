@@ -24,11 +24,13 @@ export function Footer() {
           <div className="text-gray-400 space-y-2">
             <div className="flex items-center gap-2">
               <Mail className="h-5 w-5 text-v0-green" />
-              <p>bindabasinilogistic@gmail.com</p>
+              <Link href="mailto:bindabasinilogistic@gmail.com">
+                bindabasinilogistic@gmail.com
+              </Link>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-v0-green" />
-              <p> 014984326</p>
+              <Link href="tel:014984326">014984326</Link>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-v0-green" />
@@ -82,17 +84,26 @@ export function Footer() {
             <h3 className="text-lg font-semibold">Help</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link
+                  href="/contact"
+                  className="hover:text-white transition-colors"
+                >
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-white transition-colors">
+                <Link
+                  href="/terms"
+                  className="hover:text-white transition-colors"
+                >
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-white transition-colors">
+                <Link
+                  href="/privacy"
+                  className="hover:text-white transition-colors"
+                >
                   Privacy Policy
                 </Link>
               </li>

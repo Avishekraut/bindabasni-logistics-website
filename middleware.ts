@@ -12,5 +12,5 @@ export async function middleware(req: any) {
 }
 
 export const config = {
-  matcher: ["/order-portal"], // Define the routes where the middleware should apply
+  matcher: ["/dashboard/:path*"], // Define the routes where the middleware should apply
 };

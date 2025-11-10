@@ -18,9 +18,9 @@ export default function TerminalsPage() {
     {
       image: "/terminal-birgunj.JPG",
       alt: "Logistic services in USA",
-      title: <>TRS HIMALAYAN LOJIPARK PVT.LTD</>,
+      title: <>TRS HIMALAYAN LOGIPARK PVT.LTD</>,
       location: "Birgunj",
-      route: "trs-himalayan-lojipark-pvt-ltd",
+      route: "trs-himalayan-logipark-pvt-ltd",
     },
     {
       image: "/service3.jpg",

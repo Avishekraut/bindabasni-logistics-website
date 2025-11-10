@@ -57,7 +57,6 @@ export default function ContactForm() {
         });
       }
     } catch (err) {
-      console.error(err);
       setStatusMessage({
         type: "error",
         text: "Something went wrong. Please try again.",

@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import Link from "next/link";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -56,7 +57,6 @@ export default function ContactForm() {
         });
       }
     } catch (err) {
-      console.error(err);
       setStatusMessage({
         type: "error",
         text: "Something went wrong. Please try again.",
@@ -82,7 +82,9 @@ export default function ContactForm() {
             </div>
             <div>
               <h3 className="text-lg font-semibold">Phone</h3>
-              <p className="text-gray-800">014984326</p>
+              <Link className="text-gray-800" href="tel:014984326">
+                014984326
+              </Link>
             </div>
           </div>
           <div className="space-y-6">
@@ -92,7 +94,12 @@ export default function ContactForm() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Email</h3>
-                <p className="text-gray-800">bindabasinilogistic@gmail.com</p>
+                <Link
+                  className="text-gray-800"
+                  href="mailto:bindabasinilogistic@gmail.com"
+                >
+                  bindabasinilogistic@gmail.com
+                </Link>
               </div>
             </div>
             <div className="flex items-start space-x-4">

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
-import WhatsAppButton from "@/components/shared/whatsapp-button";
+import BaseLayout from "@/components/BaseLayout";
 
 const outfit = Outfit({
   weight: "400",
@@ -23,10 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.className} antialiased`}>
-        <Navbar />
-        <WhatsAppButton />
-        {children}
-        <Footer />
+        <BaseLayout>{children}</BaseLayout>
       </body>
     </html>
   );

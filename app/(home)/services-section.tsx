@@ -25,7 +25,7 @@ const services = [
     title: "Rail & Bulk Cargo Handling",
     description:
       "Efficient handling of bulk cargo through rail and road from India, ensuring cost-effective and timely delivery for large-scale goods.",
-    image: "/service1.jpg",
+    image: "/gallery/about_1.jpg",
     icon: Train,
     features: [
       "Rail and road connectivity from India",
@@ -38,7 +38,7 @@ const services = [
     title: "Road Transportation",
     description:
       "Seamless road freight service via Tatopani and Kerung routes with reliable logistics support for safe and on-time cargo delivery.",
-    image: "/service2.jpg",
+    image: "/services/road-transport.jpg",
     icon: Truck,
     features: [
       "Tatopani and Kerung route coverage",
@@ -48,15 +48,15 @@ const services = [
   },
   {
     id: 3,
-    title: "Door-to-Door Delivery",
+    title: "Trailer Transport Service",
     description:
-      "Direct container delivery from ports to warehouses or factories, minimizing hassle with a smooth end-to-end logistics experience.",
-    image: "/service3.jpg",
+      "Direct and secure trailer delivery for large or heavy consignments, ensuring smooth long-distance logistics.",
+    image: "/gallery/gallery2.JPG",
     icon: MapPin,
     features: [
-      "From ports to warehouse/factory",
-      "End-to-end logistics support",
-      "Secure and hassle-free delivery",
+      "Direct container delivery for large consignments",
+      "Modern trailers for safe cargo handling",
+      "Smooth long-distance logistics with less delays",
     ],
   },
   {
@@ -64,7 +64,7 @@ const services = [
     title: "Air Cargo Handling",
     description:
       "Fast and reliable air freight services for import and export shipments, designed to handle time-sensitive and high-value cargo securely.",
-    image: "/service4.jpg",
+    image: "/services/air-cargo.webp",
     icon: Plane,
     features: [
       "Import and export air shipments",
@@ -77,7 +77,7 @@ const services = [
     title: "Ocean Freight",
     description:
       "Comprehensive sea freight solutions managed by experts, covering import and export shipments with cost-effective and secure shipping worldwide.",
-    image: "/service5.jpg",
+    image: "/services/ocean-freight.jpg",
     icon: Ship,
     features: [
       "Expert ocean freight handling",

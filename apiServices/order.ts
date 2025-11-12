@@ -22,3 +22,11 @@ export const createOrder = async (data: CreateOrderPayload) => {
   const response = await api.post("/api/orders", data);
   return response.data;
 };
+
+export const getOrders = async (
+  userId: string,
+  params = { page: 1, pageSize: 5 }
+) => {
+  const res = await api.get(`/api/orders/user/${userId}`, { params });
+  return res.data;
+};

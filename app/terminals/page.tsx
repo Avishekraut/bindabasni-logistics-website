@@ -9,7 +9,7 @@ export default function TerminalsPage() {
   const router = useRouter();
   const cards = [
     {
-      image: "/service1.jpg",
+      image: "/gallery/gallery1.jpg",
       alt: "ANNAPURNA TERMINALS PVT.LTD",
       title: <>ANNAPURNA TERMINALS PVT.LTD</>,
       location: "Bhairahawa",
@@ -23,7 +23,7 @@ export default function TerminalsPage() {
       route: "trs-himalayan-logipark-pvt-ltd",
     },
     {
-      image: "/service3.jpg",
+      image: "/terminal-images/pristine/prestine4.JPG",
       alt: "Global logistics offers",
       title: <>PRISTINE VALLEY DRYPORT PVT.LTD</>,
       location: "Birgunj",

@@ -1,7 +1,35 @@
+import ImageGallery from "@/components/shared/image-gallery";
 import PageHeading from "@/components/shared/page-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
+
+const galleryPhotos = [
+  {
+    src: "/gallery/gallery1.jpg",
+    alt: "Annapurna Terminal",
+  },
+  {
+    src: "/terminal-images/annapurna/anna2.jpeg",
+    alt: "Annapurna Terminal",
+  },
+  {
+    src: "/terminal-images/annapurna/anna3.jpeg",
+    alt: "Annapurna Terminal",
+  },
+  {
+    src: "/terminal-images/annapurna/anna3.jpg",
+    alt: "Annapurna Terminal",
+  },
+  {
+    src: "/terminal-images/annapurna/4.jpeg",
+    alt: "Annapurna Terminal",
+  },
+  {
+    src: "/terminal-images/annapurna/anna5.jpg",
+    alt: "Annapurna Terminal",
+  },
+];
 
 export default function AnnapurnaTerminal() {
   return (
@@ -11,7 +39,7 @@ export default function AnnapurnaTerminal() {
         breadcrumb={["Home", "Terminals", "Annapurna Terminals Pvt. Ltd"]}
         backgroundImage="/hero-section-bg.png"
       />
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 py-12 px-6 md:py-20 md:px-18">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 pt-12 px-6 md:pt-20 md:px-18">
         {/* Left Sidebar - Contact Card */}
         <div className="lg:col-span-1">
           <Card className="bg-white shadow-sm border-0 rounded-2xl overflow-hidden">
@@ -67,7 +95,7 @@ export default function AnnapurnaTerminal() {
             {/* Hero Image */}
             <div className="relative h-96">
               <Image
-                src="/service2.jpg"
+                src="/gallery/gallery1.jpg"
                 alt="Annapurna Terminal"
                 className="w-full h-full object-cover"
                 width={600}
@@ -144,6 +172,7 @@ export default function AnnapurnaTerminal() {
           </div>
         </div>
       </div>
+      <ImageGallery photos={galleryPhotos} title="Gallery" />
     </div>
   );
 }

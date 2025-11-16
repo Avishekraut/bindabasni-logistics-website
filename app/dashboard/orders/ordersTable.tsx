@@ -9,6 +9,7 @@ interface Order {
   item_description: string;
   weight: number;
   delivery_charge: number | null;
+  order_status: string;
   pickup: {
     id: number;
     name: string;

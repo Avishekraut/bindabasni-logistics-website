@@ -3,16 +3,17 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
 import { Check, Copy, Edit } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import { EditOrderDialog } from "./orderEditDialog";
 
-interface Order {
+export interface Order {
   id: number;
   documentId: string;
   item_description: string;
   weight: number;
   delivery_charge: number | null;
+  order_status: string;
   pickup: {
     id: number;
     name: string;
@@ -27,6 +28,64 @@ interface Order {
   };
 }
 
+export function OrderIdCell({ documentId }: { documentId: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(documentId);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  return (
+    <div className="flex items-center gap-2 uppercase">
+      <span>{documentId}</span>
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={handleCopy}
+        className="h-4 w-4 p-0"
+      >
+        {copied ? (
+          <Check className="h-2 w-2 text-green-500" />
+        ) : (
+          <Copy className="h-2 w-2 text-muted-foreground hover:text-foreground" />
+        )}
+      </Button>
+    </div>
+  );
+}
+
+export function ActionsCell({ order }: { order: Order }) {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const isEditDisabled = order.order_status !== "Pending";
+
+  return (
+    <>
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={() => setDialogOpen(true)}
+        disabled={isEditDisabled}
+        className="flex items-center gap-2"
+        title={
+          isEditDisabled
+            ? "Can only edit orders with Pending status"
+            : "Edit order"
+        }
+      >
+        <Edit className="h-4 w-4" />
+        <span>Edit</span>
+      </Button>
+      <EditOrderDialog
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        order={order}
+      />
+    </>
+  );
+}
+
 const formatCurrency = (value: number | string | null) => {
   if (value === null || value === undefined) return "Not set";
 
@@ -37,12 +96,6 @@ const formatCurrency = (value: number | string | null) => {
 };
 
 export const getOrdersColumns = (): ColumnDef<Order>[] => {
-  const router = useRouter();
-
-  const handleEdit = (orderId: string) => {
-    router.push(`/orders/${orderId}/edit`);
-  };
-
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Pending":
@@ -64,34 +117,37 @@ export const getOrdersColumns = (): ColumnDef<Order>[] => {
     {
       accessorKey: "documentId",
       header: "Order ID",
-      cell: ({ row }) => {
-        const [copied, setCopied] = useState(false);
-        const documentId = row.getValue("documentId") as string;
+      // cell: ({ row }) => {
+      //   const [copied, setCopied] = useState(false);
+      //   const documentId = row.getValue("documentId") as string;
 
-        const handleCopy = async () => {
-          await navigator.clipboard.writeText(documentId);
-          setCopied(true);
-          setTimeout(() => setCopied(false), 1500);
-        };
+      //   const handleCopy = async () => {
+      //     await navigator.clipboard.writeText(documentId);
+      //     setCopied(true);
+      //     setTimeout(() => setCopied(false), 1500);
+      //   };
 
-        return (
-          <div className="flex items-center gap-2 uppercase">
-            <span>{documentId}</span>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={handleCopy}
-              className="h-4 w-4 p-0"
-            >
-              {copied ? (
-                <Check className="h-2 w-2 text-green-500" />
-              ) : (
-                <Copy className="h-2 w-2 text-muted-foreground hover:text-foreground" />
-              )}
-            </Button>
-          </div>
-        );
-      },
+      //   return (
+      //     <div className="flex items-center gap-2 uppercase">
+      //       <span>{documentId}</span>
+      //       <Button
+      //         variant="ghost"
+      //         size="icon"
+      //         onClick={handleCopy}
+      //         className="h-4 w-4 p-0"
+      //       >
+      //         {copied ? (
+      //           <Check className="h-2 w-2 text-green-500" />
+      //         ) : (
+      //           <Copy className="h-2 w-2 text-muted-foreground hover:text-foreground" />
+      //         )}
+      //       </Button>
+      //     </div>
+      //   );
+      // },
+      cell: ({ row }) => (
+        <OrderIdCell documentId={row.getValue("documentId") as string} />
+      ),
     },
     {
       accessorKey: "item_description",
@@ -168,20 +224,38 @@ export const getOrdersColumns = (): ColumnDef<Order>[] => {
     {
       id: "actions",
       header: "Action",
-      cell: ({ row }) => {
-        const order = row.original;
-        return (
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => handleEdit(order.documentId)}
-            className="flex items-center gap-2"
-          >
-            <Edit className="h-4 w-4" />
-            <span>Edit</span>
-          </Button>
-        );
-      },
+      // cell: ({ row }) => {
+      //   const order = row.original;
+      //   const [dialogOpen, setDialogOpen] = useState(false);
+      //   const isEditDisabled = order.order_status !== "Pending";
+
+      //   return (
+      //     <>
+      //       <Button
+      //         variant="outline"
+      //         size="sm"
+      //         onClick={() => setDialogOpen(true)}
+      //         disabled={isEditDisabled}
+      //         className="flex items-center gap-2"
+      //         title={
+      //           isEditDisabled
+      //             ? "Can only edit orders with Pending status"
+      //             : "Edit order"
+      //         }
+      //       >
+      //         <Edit className="h-4 w-4" />
+      //         <span>Edit</span>
+      //       </Button>
+      //       <EditOrderDialog
+      //         open={dialogOpen}
+      //         onOpenChange={setDialogOpen}
+      //         order={order}
+      //       />
+      //     </>
+      //   );
+      // },
+
+      cell: ({ row }) => <ActionsCell order={row.original} />,
     },
   ];
 };

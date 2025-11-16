@@ -17,6 +17,22 @@ export interface CreateOrderPayload {
     };
   };
 }
+interface UpdateOrderPayload {
+  data: {
+    item_description?: string;
+    weight?: number;
+    pickup?: {
+      name?: string;
+      phone?: string;
+      address?: string;
+    };
+    delivery?: {
+      name?: string;
+      phone?: string;
+      address?: string;
+    };
+  };
+}
 
 export const createOrder = async (data: CreateOrderPayload) => {
   const response = await api.post("/api/orders", data);
@@ -28,5 +44,13 @@ export const getOrders = async (
   params = { page: 1, pageSize: 5 }
 ) => {
   const res = await api.get(`/api/orders/user/${userId}`, { params });
+  return res.data;
+};
+
+export const updateOrders = async (
+  orderId: string,
+  orderData: UpdateOrderPayload
+) => {
+  const res = await api.put(`/api/orders/${orderId}`, orderData);
   return res.data;
 };

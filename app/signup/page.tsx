@@ -11,8 +11,10 @@ import { SignupFormData, signupSchema } from "./signupSchema";
 import { registerUser } from "@/apiServices/auth";
 import { AxiosError } from "axios";
 import { StrapiErrorResponse } from "@/types/shared";
+import { useRouter } from "next/navigation";
 
 export default function SignupPage() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -27,6 +29,7 @@ export default function SignupPage() {
     onSuccess: () => {
       toast.success("Account created successfully! Please log in.");
       reset();
+      router.push("/login");
     },
     onError: (error: Error) => {
       let message = "Failed to create account. Please try again.";

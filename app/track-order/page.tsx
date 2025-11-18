@@ -24,7 +24,7 @@ export default function Home() {
   };
 
   return (
-    <main className="">
+    <main>
       <PageHeading
         title="Track Order"
         breadcrumb={["Home", "Track Order"]}

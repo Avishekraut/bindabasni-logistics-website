@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { trackOrder } from "@/apiServices/order";
+import { useEffect, useRef } from "react";
 
 const allStatuses = [
   "Order Placed",
@@ -69,6 +70,19 @@ export function OrderTracker({ orderId }: OrderTrackerProps) {
     },
   });
 
+  const trackerRef = useRef<HTMLDivElement>(null);
+
+  // Scroll when data is loaded and not loading
+  useEffect(() => {
+    if (data && !isLoading && trackerRef.current) {
+      trackerRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "nearest",
+      });
+    }
+  }, [data, isLoading, error]);
+
   if (isLoading) {
     return (
       <Card>
@@ -117,7 +131,7 @@ export function OrderTracker({ orderId }: OrderTrackerProps) {
   completedStatuses.add("Order Placed");
 
   return (
-    <div className="space-y-6">
+    <div ref={trackerRef} className="space-y-6 scroll-mt-24">
       {/* Order Details Card */}
       <Card>
         <CardHeader>

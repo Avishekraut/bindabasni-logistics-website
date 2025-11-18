@@ -54,3 +54,18 @@ export const updateOrders = async (
   const res = await api.put(`/api/orders/${orderId}`, orderData);
   return res.data;
 };
+
+export const trackOrder = async (orderId: string) => {
+  try {
+    const res = await api.get(`/api/orders/${orderId}?populate=*`);
+    return res.data;
+  } catch (error: any) {
+    const err = error?.response?.data?.error;
+
+    throw new Error(
+      err?.name === "NotFoundError"
+        ? "ORDER_NOT_FOUND"
+        : err?.message || "Something went wrong"
+    );
+  }
+};

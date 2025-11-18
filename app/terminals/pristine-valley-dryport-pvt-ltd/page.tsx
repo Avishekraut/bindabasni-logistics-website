@@ -3,6 +3,7 @@ import PageHeading from "@/components/shared/page-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const galleryPhotos = [
   {
@@ -55,9 +56,12 @@ export default function AnnapurnaTerminal() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Email:</p>
-                    <p className="font-medium text-gray-900">
+                    <Link
+                      href="mailto:bindabasinilogistic@gmail.com"
+                      className="font-medium text-gray-900"
+                    >
                       bindabasinilogistic@gmail.com
-                    </p>
+                    </Link>
                   </div>
                 </div>
 
@@ -67,7 +71,12 @@ export default function AnnapurnaTerminal() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Phone:</p>
-                    <p className="font-medium text-gray-900">014984326</p>
+                    <Link
+                      href="tel:014984326"
+                      className="font-medium text-gray-900"
+                    >
+                      014984326
+                    </Link>
                   </div>
                 </div>
 
@@ -77,11 +86,15 @@ export default function AnnapurnaTerminal() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Address:</p>
-                    <p className="font-medium text-gray-900">
+                    <Link
+                      href="https://maps.app.goo.gl/VnVhNicSEYqYPruXA"
+                      target="blank"
+                      className="font-medium text-gray-900"
+                    >
                       Dryport Birgunj,
                       <br />
                       Nepal
-                    </p>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -121,3 +121,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add scrollbar-gutter to prevent layout shift when scrollbar disappears */
+html {
+  scrollbar-gutter: stable;
+}

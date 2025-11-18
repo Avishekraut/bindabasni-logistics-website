@@ -1,9 +1,12 @@
+"use client";
 import type React from "react";
 import Image from "next/image";
 import { Service } from "../page";
 import { AnimatedButton } from "@/components/shared/animated-button";
+import { useRouter } from "next/navigation";
 
 export function ServicesCard({ servicesData }: { servicesData: Service[] }) {
+  const router = useRouter();
   return (
     <section className="w-full flex flex-col gap-6">
       {servicesData.map((service) => (
@@ -34,7 +37,10 @@ export function ServicesCard({ servicesData }: { servicesData: Service[] }) {
                 {service.description}
               </p>
 
-              <AnimatedButton label="Get In Touch" />
+              <AnimatedButton
+                label="Get In Touch"
+                onClick={() => router.push("/contact")}
+              />
             </div>
           </div>
         </div>

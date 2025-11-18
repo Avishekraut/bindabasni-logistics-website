@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import { Providers } from "@/providers";
 import { Toaster } from "sonner";
 import Navbar from "../shared/navbar";
@@ -14,16 +14,14 @@ type BaseLayoutProps = {
 
 export default function BaseLayout({ children }: BaseLayoutProps) {
   const pathname = usePathname();
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [showFooter, setShowFooter] = useState(true);
-  const [showWhatsApp, setShowWhatsApp] = useState(true);
 
-  useEffect(() => {
-    const isDashboardRoute = pathname.startsWith("/dashboard");
-    setShowNavbar(!isDashboardRoute);
-    setShowFooter(!isDashboardRoute);
-    setShowWhatsApp(!isDashboardRoute);
-  }, [pathname]);
+  const isDashboardRoute = pathname.startsWith("/dashboard");
+  const isAuthRoute = pathname === "/login" || pathname === "/signup";
+
+  const showNavbar = !isDashboardRoute && !isAuthRoute;
+  const showFooter = !isDashboardRoute;
+  const showWhatsApp = !isDashboardRoute;
+
   return (
     <Providers>
       <Toaster richColors />

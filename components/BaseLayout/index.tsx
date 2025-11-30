@@ -16,11 +16,20 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
   const pathname = usePathname();
 
   const isDashboardRoute = pathname.startsWith("/dashboard");
-  const isAuthRoute = pathname === "/login" || pathname === "/signup";
+  //  routes where navbar/footer/whatsapp should be hidden
+  const hiddenRoutes = [
+    "/login",
+    "/signup",
+    "/forgot-password",
+    "/reset-password",
+    "/change-password",
+  ];
 
-  const showNavbar = !isDashboardRoute && !isAuthRoute;
-  const showFooter = !isDashboardRoute;
-  const showWhatsApp = !isDashboardRoute;
+  const isHiddenRoute = hiddenRoutes.includes(pathname);
+
+  const showNavbar = !isDashboardRoute && !isHiddenRoute;
+  const showFooter = !isDashboardRoute && !isHiddenRoute;
+  const showWhatsApp = !isDashboardRoute && !isHiddenRoute;
 
   return (
     <Providers>

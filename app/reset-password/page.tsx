@@ -17,6 +17,7 @@ import { AlertCircle, CheckCircle, Eye, EyeOff } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { resetPassword } from "@/apiServices/auth";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 interface FormData {
   password: string;
@@ -28,7 +29,8 @@ interface FormErrors {
   passwordConfirmation?: string;
 }
 
-export default function ResetPasswordPage() {
+
+function ResetPasswordPageInner() {
   const searchParams = useSearchParams();
   const code = searchParams.get("code");
 
@@ -224,5 +226,13 @@ export default function ResetPasswordPage() {
         </CardContent>
       </Card>
     </div>
+  );
+}
+
+export default function ResetPasswordPage() {
+  return (
+    <Suspense>
+      <ResetPasswordPageInner />
+    </Suspense>
   );
 }

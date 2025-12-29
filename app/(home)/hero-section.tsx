@@ -39,7 +39,10 @@ export default function HeroSection() {
           playsInline
           className="h-screen w-full object-cover"
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source
+            src="https://res.cloudinary.com/dldvh7y5v/video/upload/f_auto:video,q_auto/hero-video_hi6w4o.mp4"
+            type="video/mp4"
+          />
         </video>
 
         <div className="absolute inset-0 bg-black/50" aria-hidden="true" />

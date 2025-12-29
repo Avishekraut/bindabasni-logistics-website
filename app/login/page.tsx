@@ -40,7 +40,6 @@ export default function LoginPage() {
       } else if (result?.ok) {
         toast.success("Login successful!");
         router.push("/dashboard");
-        router.refresh();
       }
     } catch (error) {
       toast.error("An error occurred during login");
@@ -97,6 +96,14 @@ export default function LoginPage() {
             <p className="text-muted-foreground text-sm mt-1">
               Minimum 8 characters.
             </p>
+            <div className="flex justify-end">
+              <Link
+                href="/forgot-password"
+                className="text-primary text-sm hover:underline"
+              >
+                Forgot password?
+              </Link>
+            </div>
           </div>
 
           {/* Submit Button */}
@@ -118,7 +125,7 @@ export default function LoginPage() {
 
         {/* Sign up Link */}
         <div className="text-center mt-6">
-          <span className="text-muted-foreground">
+          <span className="text-muted-foreground mr-1">
             Don&apos;t have an account?
           </span>
           <Link

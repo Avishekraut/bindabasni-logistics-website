@@ -2,32 +2,13 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { JWT } from "next-auth/jwt";
 import { User as NextAuthUser } from "next-auth";
-import api from "@/lib/axiosInstance";
-import { AxiosError } from "axios";
-import { StrapiErrorResponse } from "@/types/shared";
+import axios from "axios";
 
 interface CustomUser extends NextAuthUser {
   id: string;
   username: string;
   email: string;
   jwt: string;
-}
-
-interface AuthResponse {
-  jwt: string;
-  user: {
-    id: number;
-    documentId: string;
-    username: string;
-    email: string;
-    provider: string;
-    confirmed: boolean;
-    blocked: boolean;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    phone: string | null;
-  };
 }
 
 interface CustomJWT extends JWT {
@@ -49,42 +30,30 @@ const handler = NextAuth({
         if (!credentials) {
           return null;
         }
+
         try {
-          const res = await api.post<AuthResponse>("/api/auth/local", {
-            identifier: credentials.email,
-            password: credentials.password,
-          });
-
-          const data = res.data;
-
-          if (data.jwt && data.user) {
-            return {
-              id: data.user.id.toString(),
-              username: data.user.username,
-              email: data.user.email,
-              jwt: data.jwt,
-            } as CustomUser;
-          } else {
-            throw new Error("Login failed");
-          }
-        } catch (error) {
-          if (error instanceof AxiosError) {
-            const errorData = error.response?.data as
-              | StrapiErrorResponse
-              | undefined;
-
-            if (errorData?.error?.message) {
-              throw new Error(errorData.error.message);
-            } else if (errorData?.message) {
-              throw new Error(errorData.message);
-            } else if (error.message) {
-              throw new Error(error.message);
+          const res = await axios.post(
+            `${process.env.NEXT_PUBLIC_API_URL}/api/auth/local`,
+            {
+              identifier: credentials.email,
+              password: credentials.password,
             }
-          } else if (error instanceof Error) {
-            throw new Error(error.message);
+          );
+
+          if (!res.data?.jwt || !res.data?.user) {
+            console.log("INVALID STRAPI RESPONSE");
+            return null;
           }
 
-          throw new Error("Login failed. Please try again.");
+          return {
+            id: res.data.user.id.toString(),
+            username: res.data.user.username,
+            email: res.data.user.email,
+            jwt: res.data.jwt,
+          };
+        } catch (err) {
+          console.error("AUTHORIZE ERROR", err);
+          throw new Error("Invalid email or password");
         }
       },
     }),

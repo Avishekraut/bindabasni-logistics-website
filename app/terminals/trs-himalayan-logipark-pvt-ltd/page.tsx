@@ -1,7 +1,36 @@
+import ImageGallery from "@/components/shared/image-gallery";
 import PageHeading from "@/components/shared/page-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
+const galleryPhotos = [
+  {
+    src: "/terminal-birgunj.JPG",
+    alt: "Annapurna Terminal",
+  },
+  {
+    src: "/gallery/terminal-birgunj3.JPG",
+    alt: "Annapurna Terminal",
+  },
+  {
+    src: "/gallery/birgunj1.JPG",
+    alt: "Annapurna Terminal",
+  },
+  {
+    src: "/gallery/gallery2.JPG",
+    alt: "Annapurna Terminal",
+  },
+  {
+    src: "/gallery/terminal-birgunj2.JPG",
+    alt: "Annapurna Terminal",
+  },
+  {
+    src: "/gallery/terminal-birgunj4.JPG",
+    alt: "Annapurna Terminal",
+  },
+];
 
 export default function AnnapurnaTerminal() {
   return (
@@ -11,7 +40,7 @@ export default function AnnapurnaTerminal() {
         breadcrumb={["Home", "Terminals", "TRS HIMALAYAN LOGIPARK PVT.LTD"]}
         backgroundImage="/hero-section-bg.png"
       />
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 py-20 px-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 pt-12 px-6 md:pt-20 md:px-18">
         {/* Left Sidebar - Contact Card */}
         <div className="lg:col-span-1">
           <Card className="bg-white shadow-sm border-0 rounded-2xl overflow-hidden">
@@ -27,9 +56,12 @@ export default function AnnapurnaTerminal() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Email:</p>
-                    <p className="font-medium text-gray-900">
+                    <Link
+                      href="mailto:bindabasinilogistic@gmail.com"
+                      className="font-medium text-gray-900"
+                    >
                       bindabasinilogistic@gmail.com
-                    </p>
+                    </Link>
                   </div>
                 </div>
 
@@ -39,7 +71,12 @@ export default function AnnapurnaTerminal() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Phone:</p>
-                    <p className="font-medium text-gray-900">014984326</p>
+                    <Link
+                      href="tel:014984326"
+                      className="font-medium text-gray-900"
+                    >
+                      014984326
+                    </Link>
                   </div>
                 </div>
 
@@ -49,11 +86,15 @@ export default function AnnapurnaTerminal() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Address:</p>
-                    <p className="font-medium text-gray-900">
+                    <Link
+                      href="https://maps.app.goo.gl/thjxBAuxoaM3UkESA"
+                      target="blank"
+                      className="font-medium text-gray-900"
+                    >
                       ICP - Birgunj,
                       <br />
                       Nepal
-                    </p>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -157,6 +198,7 @@ export default function AnnapurnaTerminal() {
           </div>
         </div>
       </div>
+      <ImageGallery photos={galleryPhotos} title="Gallery" />
     </div>
   );
 }

@@ -34,7 +34,12 @@ export function Footer() {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-v0-green" />
-              <p>Nayabazaar Balaju, Valley Cold Store Complex</p>
+              <Link
+                href="https://maps.app.goo.gl/kgG9DAYcDyEe4RhCA"
+                target="blank"
+              >
+                Nayabazaar Balaju, Valley Cold Store Complex
+              </Link>
             </div>
           </div>
         </div>
